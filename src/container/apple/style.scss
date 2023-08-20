@@ -1,0 +1,67 @@
+@use '../../lib/service.scss' as s;
+
+
+.header {
+    @extend .section;
+    background-color: s.color('backgroundDark');
+}
+
+.header__content {
+    @extend .section__content;
+    display: flex;
+    padding: s.space(4) 0;
+    justify-content: space-between;
+}
+
+.header__block {
+    display: flex;
+    gap: s.space(8);
+    align-items: center;
+}
+
+.header__icon {
+    @include s.click;
+}
+
+.header__link {
+   
+    color: s.color('colorLight');
+    @include s.click;
+    font-style: s.size('small');    
+}
+
+.product {
+    display: flex;
+    padding-top: s.space(20);
+    padding-bottom: s.space(20);
+    justify-content: center;
+}
+
+.product__content {
+    display: grid;
+    gap: s.space(5);
+    text-align: center;
+}
+.product__title {
+    font-size: 56px;
+    font-weight: 700;
+
+}
+
+.product__descr {
+    font-size: 28px;
+}
+
+.product__action {
+    display: flex;
+    gap: s.space(5);
+    align-items: center;
+    justify-content: center;
+
+    @include s.click;
+}
+
+
+.product__link {
+    @include s.linkAction;
+}
