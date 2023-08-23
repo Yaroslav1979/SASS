@@ -20,11 +20,19 @@ $contentSizeMap: (
     width: 100%;
     
    
-
-
 @each $key, $value in var.$screenMap {
     @media all and (width < $value) {
         max-width: map-get($contentSizeMap, $key);
     }
+    }
+}
+
+.section__double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media all and (width < var.screen('laptop')) {
+        
+        grid-template-columns: 1fr;
     }
 }

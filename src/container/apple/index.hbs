@@ -27,7 +27,7 @@
         {{/with}}
     </div>
     {{#with iphone_pro}}
-      <section class="product product-bigproduct--iphone-pro product--dark product--top">
+      <section class="product product-big product--iphone-pro product--dark product--top">
       <div class="product__content">
         <h1 class="product__title">{{title}} </h1>
         <p class="product__descr">{{descriptions}} </p>
@@ -41,6 +41,62 @@
       </div>
     </section>
     {{/with}} 
+
+    {{#with iphone}}
+      <section class="product product-big product--iphone product--light product--top">
+      <div class="product__content">
+        <h1 class="product__title">{{title}} </h1>
+        <p class="product__descr">{{descriptions}} </p>
+        <div class="product__activ">
+          {{#with link}}          
+            {{#each text}}
+            <a href="{{../link}}" class="product__link">{{this}}</a> 
+            {{/each}}
+          {{/with}}
+        </div>
+      </div>
+    </section>
+    {{/with}} 
+
+
+
+    <div class="section__double">
+
+      {{#with trade_in}}
+      <section class="product product-small product--trade-in product--light product--top">
+      <div class="product__content">
+        <h1 class="product__title">{{title}} </h1>
+        <p class="product__descr">{{descriptions}} </p>
+        <div class="product__activ">
+          {{#with link}}          
+            {{#each text}}
+            <a href="{{../link}}" class="product__link">{{this}}</a> 
+            {{/each}}
+          {{/with}}
+        </div>
+      </div>
+        {{/with}}
+        </section>
+
+{{#with conference}}
+
+       
+      <section class="product product-small product--conference product--dark product--bottom">
+       
+      <div class="product__content">
+        <h1 class="product__title">{{title}} </h1>
+        <p class="product__descr">{{descriptions}} </p>
+        <div class="product__activ">
+          {{#with link}}          
+            {{#each text}}
+            <a href="{{../link}}" class="product__link">{{this}}</a> 
+            {{/each}}
+          {{/with}}
+        </div>
+      </div>
+          {{/with}} 
+    </section> 
+
 </div>
 {{! 
     Цей код містить лише те, що буде виводитись в <body>

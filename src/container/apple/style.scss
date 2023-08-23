@@ -30,17 +30,12 @@
     font-style: s.size('small');    
 }
 
-.product {
-    display: flex;
-    padding-top: s.space(20);
-    padding-bottom: s.space(20);
-    justify-content: center;
-}
 
 .product__content {
     display: grid;
     gap: s.space(5);
     text-align: center;
+    align-content: center;
 }
 .product__title {
     font-size: 56px;
@@ -65,3 +60,87 @@
 .product__link {
     @include s.linkAction;
 }
+
+.product {
+    display: flex;
+    padding-top: s.space(20);
+    padding-bottom: s.space(20);
+    justify-content: center;
+
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.product-big {
+    max-height: 700px;
+    height: 100vh;
+
+    background-size: cover;  
+
+    @media all and (width < s.screen('tablet')) {
+        background-size: 150%;
+
+        max-height: 500px;
+    }
+}
+
+.product-small {
+    max-height: 580px;
+    height: 100vh;
+
+    background-size: cover;  
+
+    @media all and (width < s.screen('tablet')) {
+        background-size: 150%;
+
+        max-height: 500px;
+    }
+}
+
+.product--dark {
+    .product__title, .product__descr {
+        color: s.color('background');
+        background-color: black;
+    }
+}
+.product--top {
+    .product__content {
+        align-content: flex-start;
+    }    
+}
+.product--bottom {
+    .product__content {
+        align-content: flex-end;
+    }    
+}
+
+.product--light {
+    .product__title, .product__descr {
+        color: s.color('fontDark');
+        background-color: #fafafa;
+    }
+}
+
+$productImage: (
+    'iphone-pro' '/img/frame1.png' #000,
+    'iphone' '/img/frame2.png' #fafafa,
+    'trade-in' '/img/trade.png' #fbfbfd,
+    'conference' '/img/wwwdc.png' #000,
+    
+    
+);
+
+@each $class, $url, $color in $productImage {
+    .product--#{$class} {
+        background-image: url(#{$url});
+        background-color: $color;
+    }
+}
+
+// .product--iphone-pro {
+//     background-image: url('/img/frame1.png');
+// }
+
+// .product--iphone {
+//     background-image: url('/img/frame2.png');
+// }
