@@ -29,6 +29,16 @@
   }
 }
 
+.section__double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media all and (width < 1260px) {
+  .section__double {
+    grid-template-columns: 1fr;
+  }
+}
+
 .header {
   background-color: #454545;
 }
@@ -69,17 +79,11 @@
   opacity: 0.3;
 }
 
-.product {
-  display: flex;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  justify-content: center;
-}
-
 .product__content {
   display: grid;
   gap: 20px;
   text-align: center;
+  align-content: center;
 }
 
 .product__title {
@@ -120,6 +124,77 @@
   background-image: url(/img/svg/arrowLink.svg);
   right: 0;
   top: calc(50% - 5px);
+}
+
+.product {
+  display: flex;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.product-big {
+  max-height: 700px;
+  height: 100vh;
+  background-size: cover;
+}
+@media all and (width < 1000px) {
+  .product-big {
+    background-size: 150%;
+    max-height: 500px;
+  }
+}
+
+.product-small {
+  max-height: 580px;
+  height: 100vh;
+  background-size: cover;
+}
+@media all and (width < 1000px) {
+  .product-small {
+    background-size: 150%;
+    max-height: 500px;
+  }
+}
+
+.product--dark .product__title, .product--dark .product__descr {
+  color: #F5F5F7;
+  background-color: black;
+}
+
+.product--top .product__content {
+  align-content: flex-start;
+}
+
+.product--bottom .product__content {
+  align-content: flex-end;
+}
+
+.product--light .product__title, .product--light .product__descr {
+  color: #1D1D1F;
+  background-color: #fafafa;
+}
+
+.product--iphone-pro {
+  background-image: url(/img/frame1.png);
+  background-color: #000;
+}
+
+.product--iphone {
+  background-image: url(/img/frame2.png);
+  background-color: #fafafa;
+}
+
+.product--trade-in {
+  background-image: url(/img/trade.png);
+  background-color: #fbfbfd;
+}
+
+.product--conference {
+  background-image: url(/img/wwwdc.png);
+  background-color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */
